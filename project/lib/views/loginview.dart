@@ -8,6 +8,7 @@ import 'package:project/views/singupview.dart';
 import '../constant.dart';
 import '../main.dart';
 import 'HomePage.dart';
+import 'bottomNavigator.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({super.key});
@@ -32,7 +33,7 @@ class LoginView extends StatelessWidget {
       ScaffoldMessenger.of(context).showSnackBar(Login);
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => HomeScreen(),
+          builder: (context) => BottomNavigator(),
         ),
       );
     } on FirebaseAuthException catch (e) {
@@ -73,7 +74,7 @@ class LoginView extends StatelessWidget {
                   },
                   child: Image.asset("assets/images/Back.png")),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.3,
+                width: MediaQuery.of(context).size.width * 0.22,
               ),
               Text(
                 "Sign In",

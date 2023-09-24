@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
                         height: 1),
                   )
       ),
-      home: const BottomNavigator(),
+      home: const MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }

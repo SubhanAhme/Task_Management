@@ -57,6 +57,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
                     
                     showModalBottomSheet(
                         shape: const RoundedRectangleBorder(
+                          
                             borderRadius: BorderRadius.vertical(
                                 top: Radius.circular(20))),
                         context: context,

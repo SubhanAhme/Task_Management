@@ -78,7 +78,7 @@ class SignUp extends StatelessWidget {
                   },
                   child: Image.asset("assets/images/Back.png")),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.3,
+                width: MediaQuery.of(context).size.width * 0.22,
               ),
               Text(
                 "Sign Up",
@@ -216,7 +216,7 @@ class SignUp extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("Have an Account",
+                        Text("Have an Account?",
                             style: GoogleFonts.poppins(
                               textStyle: const TextStyle(
                                 fontSize: 15,

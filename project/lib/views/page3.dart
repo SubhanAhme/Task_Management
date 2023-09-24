@@ -14,28 +14,27 @@ class Page3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-              // height: MediaQuery.of(context).size.height * 0.5,
-              // width: MediaQuery.of(context).size.height * 1,
-              child: Image(image: AssetImage("assets/images/intro3.png")),
-            ),
-            SizedBox(height: 15,),
-            Stack(
+      body: Stack(
               
               children: [
-                Padding(
-                  padding: EdgeInsets.only(left:  MediaQuery.of(context).size.width * 0.1,),
-                  child:  Container(
-                    height: MediaQuery.of(context).size.height * 0.49,
-                               width: MediaQuery.of(context).size.height * 1,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                Positioned(
+                   bottom: MediaQuery.of(context).size.height * 0.45,
+                  child: Container(
+                              // height: MediaQuery.of(context).size.height * 0.5,
+                              // width: MediaQuery.of(context).size.height * 1,
+                              child: Image(image: AssetImage("assets/images/intro3.png")),
+                            ),
+                ),
+                Positioned(
+                  top: MediaQuery.of(context).size.height * 0.55,
+                        
+                        left: MediaQuery.of(context).size.width * 0.1,
+                  child: Container(
+                    
+                              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                   Text(
                     'Task Management',
                     style: GoogleFonts.poppins(
@@ -97,7 +96,7 @@ class Page3 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  ]))
+                  ])),
                 ),
                         Positioned(
                           right: 0,
@@ -118,8 +117,7 @@ class Page3 extends StatelessWidget {
                         ),
               ],
             ),
-        ],
-      )
+       
     );
       
   }

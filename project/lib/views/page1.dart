@@ -1,94 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter/src/widgets/framework.dart';
-// import 'package:flutter/src/widgets/placeholder.dart';
-
-// import 'Page2.dart';
-
-// class Page1 extends StatelessWidget {
-//   const Page1({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Column(
-//         // mainAxisAlignment: MainAxisAlignment.start,
-//         // crossAxisAlignment: CrossAxisAlignment.start,
-//        children: [
-//         Container(
-//           // height: MediaQuery.of(context).size.height * 0.5,
-//           // width: MediaQuery.of(context).size.height * 1,
-//           child: Image(image: AssetImage("assets/images/intro1.png")),
-//         ),
-//         SizedBox(
-//           height: 30,
-//         ),
-//         Positioned(
-//           // left: 20,
-//           // right: 20,
-//           child: Container(
-//             // height: MediaQuery.of(context).size.height * 0.4,
-//             // width: MediaQuery.of(context).size.height * 1,
-//             child: Column(
-//               mainAxisAlignment: MainAxisAlignment.start,
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   "Task Management ",
-//                   style: TextStyle(
-//                       fontSize: 24,
-//                       fontFamily: 'ProductSans',
-//                       fontWeight: FontWeight.w700,
-//                       color: Color(0xFF5451D6)),
-//                 ),
-//                 Text(
-//                   "Let's Create a",
-//                   style: TextStyle(
-//                       fontSize: 24,
-//                       fontFamily: 'ProductSans',
-//                       fontWeight: FontWeight.w700,
-//                       color: Color(0x665451D6)),
-//                 ),
-//                 Text(
-//                   "Space For Your",
-//                   style: TextStyle(
-//                       fontSize: 24,
-//                       fontFamily: 'ProductSans',
-//                       fontWeight: FontWeight.w700,
-//                       color: Color(0xFF5451D6)),
-//                 ),
-//                 Text(
-//                   "WorkForce",
-//                   style: TextStyle(
-//                       fontSize: 24,
-//                       fontFamily: 'ProductSans',
-//                       fontWeight: FontWeight.w700,
-//                       color: Color(0x665451D6)),
-//                 ),
-                
-               
-//               ],
-//             ),
-//           ),
-//         )
-//       ]),
-//       floatingActionButton:  Container(
-//                             child: GestureDetector(
-//                               onTap: () {
-//                                 Navigator.push(
-//                                   context,
-//                                   MaterialPageRoute(
-//                     builder: (context) => Page2(),
-//                                   ),
-//                                 );
-//                               },
-//                               child: Image.asset("assets/images/button.png"),
-//                             ),
-//                           ),
-//     );
-//   }
-// }
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -103,28 +12,27 @@ class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-              // height: MediaQuery.of(context).size.height * 0.5,
-              // width: MediaQuery.of(context).size.height * 1,
-              child: Image(image: AssetImage("assets/images/intro1.png")),
-            ),
-            SizedBox(height: 5,),
-            Stack(
-              
+      body:Stack(           
               children: [
-                Padding(
-                  padding: EdgeInsets.only(left:  MediaQuery.of(context).size.width * 0.1,),
+                Positioned(
+                  bottom: MediaQuery.of(context).size.height * 0.45,
                   child: Container(
-                    height: MediaQuery.of(context).size.height * 0.45,
-                               width: MediaQuery.of(context).size.height * 1,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                              // height: MediaQuery.of(context).size.height * 0.5,
+                              // width: MediaQuery.of(context).size.height * 1,
+                              child: Image(image: AssetImage("assets/images/intro1.png")),
+                            ),
+                ),
+                Positioned(
+                        top: MediaQuery.of(context).size.height * 0.55,
+                        
+                        left: MediaQuery.of(context).size.width * 0.1,
+                        
+                  child: Container(
+                    
+                              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                   Text(
                     'Task Management',
                     style: GoogleFonts.poppins(
@@ -186,7 +94,7 @@ class Page1 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  ]))
+                  ])),
                 ),
                         Positioned(
                           right: 0,
@@ -207,8 +115,8 @@ class Page1 extends StatelessWidget {
                         ),
               ],
             ),
-        ],
-      )
+       
+      
     );
       
   }
