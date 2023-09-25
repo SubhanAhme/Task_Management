@@ -4,8 +4,9 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+
 import '../constant.dart';
-import '../main.dart';
 import 'loginview.dart';
 
 class SignUp extends StatelessWidget {

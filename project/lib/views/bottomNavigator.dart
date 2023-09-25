@@ -1,11 +1,16 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project/views/Chat.dart';
+import 'package:project/views/addTeam.dart';
 
+import '../constant.dart';
 import 'HomePage.dart';
 import 'Profile.dart';
 import 'Project.dart';
+import 'addTask.dart';
 
 class BottomNavigator extends StatefulWidget {
   const BottomNavigator({super.key});
@@ -56,131 +61,82 @@ class _BottomNavigatorState extends State<BottomNavigator> {
                   onPressed: () {
                     
                     showModalBottomSheet(
+                      backgroundColor: Color(0xFFFFFFFF),
+                       barrierColor: Colors.transparent,
+
                         shape: const RoundedRectangleBorder(
                           
                             borderRadius: BorderRadius.vertical(
                                 top: Radius.circular(20))),
                         context: context,
-                        builder: (context) => Center(
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image.asset("assets/images/Rectangle.png",color: Color(0xFFE9F1FF)),
-                                 Container(
-                                  height: 56,
-                                  width: 327,
-                                  decoration: BoxDecoration(
-                                     border: Border.all(color: Color(0xFFE9F1FF)),
-                                    color: Color(0xFFFFFFFF),
-                                    borderRadius: BorderRadius.circular(12)
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      children: [
-                                        Image.asset("assets/images/AddTask.png"),
-                                        SizedBox(width: 10,),
-                                        Text("Create Task", style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF002055),
-                    height: 2,
-                  ),
-                ),)
-                                      ],
-                                    ),
-                                  ),
-                                 ),
-                                 Container(
-                                  height: 56,
-                                  width: 327,
-                                  decoration: BoxDecoration(
-                                     border: Border.all(color: Color(0xFFE9F1FF)),
-                                    color: Color(0xFFFFFFFF),
-                                    borderRadius: BorderRadius.circular(12)
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      children: [
-                                        Image.asset("assets/images/Plus.png"),
-                                        SizedBox(width: 10,),
-                                        Text("Create Project", style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF002055),
-                    height: 2,
-                  ),
-                ),)
-                                      ],
-                                    ),
-                                  ),
-                                 ),
-                                 Container(
-                                  height: 56,
-                                  width: 327,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFFFFFFF),
-                                    borderRadius: BorderRadius.circular(12),
-                                     border: Border.all(color: Color(0xFFE9F1FF))
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      children: [
-                                        Image.asset("assets/images/3User.png"),
-                                        SizedBox(width: 10,),
-                                        Text("Create Team", style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF002055),
-                    height: 2,
-                  ),
-                ),)
-                                      ],
-                                    ),
-                                  ),
-                                 ),
-                                 Container(
-                                  height: 56,
-                                  width: 327,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFFFFFFF),
-                                    borderRadius: BorderRadius.circular(12),
-                                     border: Border.all(color: Color(0xFFE9F1FF))
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      children: [
-                                        Image.asset("assets/images/TimeCircle.png"),
-                                        SizedBox(width: 10,),
-                                        Text("Create Event", style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF002055),
-                    height: 2,
-                  ),
-                ),)
-                                      ],
-                                    ),
-                                  ),
-                                 ),
-                                 GestureDetector(
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Image.asset("assets/images/Delete.png"))
-                                 
-                                ],
+                        builder: (context) => Stack(
+                          children: [
+                            BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                      child: Container(
+                        color: Color(0xFFFFFFFF)
+                            .withOpacity(0.1), // Adjust opacity as needed
+                      ),
+                    ),
+
+                            Center(
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                     Image.asset("assets/images/Rectangle.png",
+                                  color: Color(0xFFE9F1FF)),
+                              InkWell(
+                                 onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => AddTask(),
                               ),
-                            ));
+                            );
+                          },
+                                child: AddButtonContainer(
+                                    icon: "assets/images/AddTask.png",
+                                    text: "Create Task"),
+                              ),
+                              InkWell(
+                                child: AddButtonContainer(
+                                    icon: "assets/images/Plus.png",
+                                    text: "Create Project"),
+                              ),
+                              InkWell(
+                                 onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CreateTeam  (),
+                              ),
+                            );
+                          },
+                                child: AddButtonContainer(
+                                    icon: "assets/images/3User.png",
+                                    text: "Create Team"),
+                              ),
+                              InkWell(
+                                
+                                child: AddButtonContainer(
+                                    icon: "assets/images/TimeCircle.png",
+                                    text: "Create Event"),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Image.asset('assets/images/Delete.png')
+                               
+                              ),
+                                    
+                                    ],
+                                  ),
+                                ),
+                          ],
+                        ));
                    
                   },
                   child:  Image.asset(
@@ -218,3 +174,5 @@ class _BottomNavigatorState extends State<BottomNavigator> {
     );
   }
 }
+
+

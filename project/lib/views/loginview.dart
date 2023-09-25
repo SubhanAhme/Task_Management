@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:project/views/initializer.dart';
 import 'package:project/views/singupview.dart';
+
+
 
 import '../constant.dart';
 import '../main.dart';
@@ -49,6 +52,7 @@ class LoginView extends StatelessWidget {
   
 
   Widget build(BuildContext context) {
+   
     return Scaffold(
       backgroundColor: Color(0xFFFFFFFF),
       appBar: AppBar(
@@ -68,7 +72,7 @@ class LoginView extends StatelessWidget {
                    Navigator.push(
                     context,
                     MaterialPageRoute(
-                            builder: (context) => MyHomePage(),
+                            builder: (context) => Initializer(),
                     ),
                   );
                   },
@@ -144,7 +148,7 @@ class LoginView extends StatelessWidget {
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
-                child: MyTextField(hintText: "Enter Your Password",controller: pass_control,)
+                child: MyTextField(hintText: "Enter Your Password",controller: pass_control,obsecureText: true,)
               ),
               Padding(
                 padding: EdgeInsets.only(

@@ -1,35 +1,36 @@
 class DataConstant {
+  static List AddMember = [{
+    "profileImage":"assets/images/Plus.png",
+    "name":""
+
+  }];
   static List Project = [
     {
-      "title":"Unity Dashboard",
-      "subtitle":"Design",
+      "title": "Unity Dashboard",
+      "subtitle": "Design",
       // "Team":["Subhan","Hashir","Rahim","Kumail"],
       // "Progress":{
       //   "taskName":"Mobile Application Design",
       //   "status":"notDone"
       // }
-
-  },
-   {
-      "title":"Instagram Shots",
-      "subtitle":"Marketing",
+    },
+    {
+      "title": "Instagram Shots",
+      "subtitle": "Marketing",
       // "Team":["Aman","Mubasshir","Munib","Asad"],
       // "Progress":{
       //   "taskName":"Model Hiring",
       //   "status":"notDone"
       // }
-
-  },
-   {
-      "title":"Cubbles",
-      "subtitle":"Design",
+    },
+    {
+      "title": "Cubbles",
+      "subtitle": "Design",
       // "Team":["Huzaifa","Habib","Talha","Talal"],
       // "Progress":{
       //   "taskName":"Mobile Application Design",
       //   "status":"notDone"
       // }
-
-  }
-  
+    }
   ];
 }
