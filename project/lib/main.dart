@@ -5,6 +5,7 @@ import 'package:project/views/HomePage.dart';
 import 'package:project/views/bottomNavigator.dart';
 import 'package:project/views/initializer.dart';
 import 'package:project/views/page1.dart';
+import 'package:project/views/taskStatus.dart';
 
 import 'colors.dart';
 import 'constant.dart';
@@ -25,14 +26,14 @@ class MyApp extends StatelessWidget {
       title: 'Task Manager App',
       theme: ThemeData(
         primarySwatch: primary,
-        textTheme: TextTheme(bodyLarge: TextStyle(
+        textTheme: const TextTheme(bodyLarge: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
                         color: Colors.grey,
                         height: 1),
                   )
       ),
-      home: const BottomNavigator(),
+      home:  TaskStatus(),
       debugShowCheckedModeBanner: false,
     );
   }

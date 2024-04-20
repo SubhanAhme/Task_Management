@@ -5,7 +5,9 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project/constant.dart';
 
+import '../models.dart/members.dart';
 import '../utils/DataConstant.dart';
+import 'memberList.dart';
 
 class CreateTeam extends StatefulWidget {
   const CreateTeam({super.key});
@@ -15,6 +17,7 @@ class CreateTeam extends StatefulWidget {
 }
 
 class _CreateTeamState extends State<CreateTeam> {
+  List<Members> selectedMember = Members.getSelectedMembers();
   TextEditingController teamName = TextEditingController();
 
   int activeTab = 0;
@@ -134,42 +137,62 @@ class _CreateTeamState extends State<CreateTeam> {
               ),
               SizedBox(height: 10,),
              Container(
-              height: 80,
-               child: CarouselSlider.builder(
-                options: CarouselOptions(
-                // onPageChanged: (index, reason) {
-                //   setState(() {
-                //     activeTab = index;
-                //   });
-                // },
-                aspectRatio: 2.2, // Adjust the aspect ratio as needed
-                enlargeCenterPage: false,
-                // viewportFraction: 76 / 100
-                ),
-                  itemCount: DataConstant.AddMember.length,
-                  itemBuilder: (context, index,realIndex) {
-                    return Padding(padding: EdgeInsets.only(top: 10, right: 10),
-                    child:  Column(
-                      children: [
-                        CircleAvatar(
-                                      radius: 26,
-                                      
-                                      backgroundColor: Color(0xFFFFFFFF),
-                                      child: ImageIcon(
-                                         
-                                        AssetImage("${DataConstant.AddMember[index]["profileImage"]}"),
-                                        size: 24,
-                                        color:Color(0xFF756EF3) ,
+                height: 100,
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 4,
+                      child: ListView.builder(
+                        
+                        scrollDirection: Axis.horizontal,
+                        itemCount: selectedMember.length,
+                        itemBuilder: (context,index){
+                          return Padding(
+                          padding: EdgeInsets.only(top: 10, right: 5),
+                          child: Column(
+                            children: [
+                              CircleAvatar(
+                                radius: 30,
+                                backgroundColor: Color(0xFFFFFFFF),
+                                child:CircleAvatar(
+                                  backgroundImage:  AssetImage(
+                                      selectedMember[index].ProfilePic),
+                                )
+                              ),
+                              Text(selectedMember[index].memberName,style: GoogleFonts.poppins(
+                                      textStyle: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFFE848194),
+                      height: 2,
                                       ),
-                                    ),
-                                    Text("${DataConstant.AddMember[index]["name"]}")
-                      ],
+                                    ),)
+                            ],
+                          ),
+                        );
+                      }),
                     ),
-             
+                    InkWell(
+                      onTap: () {
+                          Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                              builder: (context) => MembersList(),
+                      ),
                     );
-                  }, 
+                      },
+                      child: CircleAvatar(
+                        radius: 20,
+                        child: CircleAvatar(
+                          radius: 19,
+                          backgroundColor: Color(0xFFFFFFFF),
+                          child: Icon(Icons.add,color:Color(0xFF756EF3),),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
-             ),
+              ),
               SizedBox(height: 10,),
              
                 SizedBox(height: 20,),
@@ -273,7 +296,8 @@ class _CreateTeamState extends State<CreateTeam> {
                             ),
                           ),
                         ),
-                      )
+                      ),
+                      
                     ],
                   ),
                ),

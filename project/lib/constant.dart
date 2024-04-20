@@ -65,12 +65,16 @@ class MyTextField extends StatelessWidget {
   var controller;
   
   var obsecureText;
+  
+  var prefixIcon;
 
   MyTextField({
     Key? key,
     required this.hintText,
     required this.controller,
     this.obsecureText=false,
+    this.prefixIcon,
+    
     // Default height
   }) : super(key: key);
 
@@ -81,6 +85,7 @@ class MyTextField extends StatelessWidget {
         cursorColor: Color(0xFF756EF3),
         controller: controller,
         decoration: InputDecoration(
+          prefixIcon: prefixIcon,
          hintText: hintText,
           hintStyle: GoogleFonts.poppins(
             textStyle: const TextStyle(

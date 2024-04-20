@@ -154,13 +154,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 margin: EdgeInsets.only(
                   right: 60.0,top: 20
                 ),
-                height: 140,
-                width: 260,
+                height: 93,
+                width: 327,
                 decoration: BoxDecoration(
                   border: Border.all(color: borderColor),
                   color: containerColor, // Purple color
                   borderRadius:
-                      BorderRadius.circular(20.0), // Rounded borders
+                      BorderRadius.circular(16.0), // Rounded borders
                 ),
                 child: Padding(
                   padding: EdgeInsets.only(top: 23, left: 23),
