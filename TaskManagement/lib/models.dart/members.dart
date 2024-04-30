@@ -1,4 +1,4 @@
-class Members{
+class Members {
   bool isSelected;
   final String memberName;
   final String ProfilePic;
@@ -7,14 +7,14 @@ class Members{
   Members({required this.isSelected, required this.memberName, required this.ProfilePic, required this.isDefault});
 
   //List of Cities data
-  static List<Members> memberList = [
+  static List memberList = [
     Members(
-        isSelected: false,
+        isSelected: true,
         memberName: 'john',
         ProfilePic: 'assets/images/No1.jpg',
         isDefault: false),
     Members(
-        isSelected: false,
+        isSelected: true,
         memberName: 'Amber',
         ProfilePic: 'assets/images/No2.jpg',
         isDefault: false),
@@ -85,11 +85,11 @@ class Members{
         isDefault: false),
   ];
 
-  //Get the selected cities
-  static List<Members> getSelectedMembers(){
-    List<Members> selectedMembers = Members.memberList;
-    return selectedMembers
-        .where((Members) => Members.isSelected == true)
-        .toList();
-  }
+  
+  // static List<Members> getSelectedMembers(){
+  //   List<Members> selectedMembers = Members.memberList;
+  //   return selectedMembers
+  //       .where((Members) => Members.isSelected == true)
+  //       .toList();
+  // }
 }

@@ -145,8 +145,8 @@ class _ProjectState extends State<Project> {
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                     color: (activeTab == 0)
-                                        ? Color(0xFFE848194)
-                                        : Color(0xFF002055),
+                                        ? Color(0xFF002055)
+                                        : Color(0xFFE848194),
                                     height: 2,
                                   ),
                                 ),
@@ -181,8 +181,8 @@ class _ProjectState extends State<Project> {
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                     color: (activeTab == 1)
-                                        ? Color(0xFFE848194)
-                                        : Color(0xFF002055),
+                                        ? Color(0xFF002055)
+                                        : Color(0xFFE848194),
                                     height: 2,
                                   ),
                                 ),
@@ -215,8 +215,8 @@ class _ProjectState extends State<Project> {
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
                                   color: (activeTab == 2)
-                                      ? Color(0xFFE848194)
-                                      : Color(0xFF002055),
+                                     ? Color(0xFF002055)
+                                        : Color(0xFFE848194),
                                   height: 2,
                                 ),
                               ),
